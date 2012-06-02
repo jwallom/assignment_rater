@@ -23,9 +23,12 @@
 	  <div id="navigation">
 			<ul>
 				<li><%= link_to "Home", root_path %></li>
-				<li><a href="">About</a></li>
-				<li><a href="">Contact</a></li>
-				<li><a href="">Login</a></li>
+				<% if current_user %>
+					<li><%= link_to "User Admin", users_path %></li>
+					<li><%= link_to "Log out", log_out_path %></li>
+				<% else %>
+					<li><%= link_to "Log in", login_path %></li>
+				<% end %>
 			</ul>
 	  </div>
   </header>

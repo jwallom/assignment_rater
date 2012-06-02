@@ -10,17 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120531191030) do
+ActiveRecord::Schema.define(:version => 20120602122731) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
-    t.string   "password"
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "active"
     t.boolean  "instructor"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_hash"
+    t.string   "password_salt"
   end
 
 end
