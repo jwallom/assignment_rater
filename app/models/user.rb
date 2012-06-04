@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create, :message => " does not match."
   validates_uniqueness_of :username, :message => " That email address is taken."
   
+  validates_length_of :password, :minimum => 8, :message => "Your password must be at least 8 characters in length."
+  
   validates_format_of :username,
   	:with => /@/,
   	:message => "Needs to contain an @."
