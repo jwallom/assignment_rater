@@ -24,7 +24,9 @@
 			<ul>
 				<li><%= link_to "Home", root_path %></li>
 				<% if current_user %>
-					<li><%= link_to "User Admin", users_path %></li>
+					<% if instructor? %>
+						<li><%= link_to "User Admin", users_path %></li>
+					<% end %>
 					<li><%= link_to "Log out", log_out_path %></li>
 				<% else %>
 					<li><%= link_to "Log in", login_path %></li>
